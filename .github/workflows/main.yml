@@ -30,4 +30,8 @@ jobs:
               run: yarn lint
 
             - name: Deploy
-              run: yarn deploy
+              uses: SamKirkland/FTP-Deploy-Action@4.3.3
+              with:
+                  server: ${{ secrets.cripto_coin }}
+                  username: ${{ secrets.user }}
+                  password: ${{ secrets.password }}
